@@ -1,0 +1,10 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Print: fit resume on 1-1.5 pages */
+@media print {
+  body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .print\\:shadow-none { box-shadow: none; }
+  .print\\:max-w-none { max-width: none; }
+}
