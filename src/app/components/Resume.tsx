@@ -3,7 +3,7 @@ import resumeImage from "../../../resume.JPG";
 
 export function Resume() {
   return (
-    <div className="max-w-5xl mx-auto bg-white shadow-lg print:shadow-none print:max-w-none">
+    <div className="resume-container w-full min-h-screen pt-10 pb-10 pl-10 pr-10 bg-white print:shadow-none">
       {/* Header */}
       <header className="bg-gradient-to-r from-slate-900 to-slate-700 text-white px-6 py-4">
         <div className="flex items-start justify-between">
@@ -13,17 +13,63 @@ export function Resume() {
               Audio DSP Engineer (C++ / JUCE / VST3)
             </p>
             <div className="flex flex-wrap gap-4 text-xs text-slate-300">
-              <div className="flex items-center gap-2">
+              <a
+                href="tel:+359893004405"
+                className="flex items-center gap-2 hover:text-white transition-colors print:text-slate-300 print:underline"
+              >
                 <Phone className="w-3 h-3" />
                 <span>+359 893 004 405</span>
-              </div>
-              <div className="flex items-center gap-2">
+              </a>
+              <a
+                href="mailto:dessy@daudio.dev"
+                className="flex items-center gap-2 hover:text-white transition-colors print:text-slate-300 print:underline"
+              >
                 <Mail className="w-3 h-3" />
                 <span>dessy@daudio.dev</span>
-              </div>
-              <div className="flex items-center gap-2">
+              </a>
+              <a
+                href="https://daudio.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-white transition-colors print:text-slate-300 print:underline"
+              >
                 <Globe className="w-3 h-3" />
                 <span>daudio.dev</span>
+              </a>
+            </div>
+            <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-slate-300">
+              <p>
+                <span className="font-semibold text-slate-200">Open to:</span>{" "}
+                Remote / Contract / Hybrid
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://github.com/d3ssy23"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 hover:text-white transition-colors print:underline"
+                >
+                  <Github className="w-3 h-3" />
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/desislava-ilieva-482747158/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 hover:text-white transition-colors print:underline"
+                >
+                  <Linkedin className="w-3 h-3" />
+                  <span>LinkedIn</span>
+                </a>
+                {/* <a
+                  href="https://daudio.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 hover:text-white transition-colors print:underline"
+                >
+                  <Globe className="w-3 h-3" />
+                  <span>daudio.dev</span>
+                </a> */}
               </div>
             </div>
           </div>
@@ -31,7 +77,7 @@ export function Resume() {
             <img
               src={resumeImage}
               alt="Profile"
-              className="w-36 h-36 rounded-full object-cover border-2 border-white shadow-lg"
+              className="w-36 h-36 rounded-full object-cover border-2 border-white shadow-lg print:shadow-none"
             />
           </div>
         </div>
@@ -173,45 +219,6 @@ export function Resume() {
               </div>
             </div>
           </section>
-
-          {/* Additional Information */}
-          <section>
-            <h2 className="text-lg font-bold text-slate-900 mb-2 pb-1 border-b-2 border-slate-900">
-              Additional Information
-            </h2>
-            <div className="space-y-1.5 text-slate-700 text-sm">
-              <p>
-                <span className="font-semibold text-slate-900">Open to:</span>{" "}
-                Remote / Contract / Hybrid
-              </p>
-              <div>
-                <span className="font-semibold text-slate-900">Links:</span>
-                <div className="flex flex-wrap gap-3 mt-1 ml-2">
-                  <a
-                    href="https://github.com/d3ssy23"
-                    className="flex items-center gap-1 text-slate-700 hover:text-slate-900"
-                  >
-                    <Github className="w-3 h-3" />
-                    <span>GitHub</span>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/desislava-ilieva-482747158/"
-                    className="flex items-center gap-1 text-slate-700 hover:text-slate-900"
-                  >
-                    <Linkedin className="w-3 h-3" />
-                    <span>LinkedIn</span>
-                  </a>
-                  <a
-                    href="https://daudio.dev"
-                    className="flex items-center gap-1 text-slate-700 hover:text-slate-900"
-                  >
-                    <Globe className="w-3 h-3" />
-                    <span>daudio.dev</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
 
         {/* Right Column */}
@@ -266,14 +273,14 @@ export function Resume() {
                     memory management
                   </span>
                 </li>
-                <li className="flex items-start">
+                {/* <li className="flex items-start">
                   <span className="mr-2">•</span>
                   <span>
                     Implemented advanced DSP algorithms: BLAMP anti-aliasing,
                     2x–16x oversampling, phase-coherent crossfading, spectral
                     morphing
                   </span>
-                </li>
+                </li> */}
               </ul>
             </div>
 
@@ -376,8 +383,8 @@ export function Resume() {
         </div>
       </div>
 
-      {/* Key Projects - Full width below 2 cols */}
-      <div className="px-6 pb-5">
+      {/* Key Projects - Full width below 2 cols, starts on page 2 when printed/PDF */}
+      <div className="key-projects-section px-6 pb-5">
         <section className="mb-5">
           <h2 className="text-lg font-bold text-slate-900 mb-2 pb-1 border-b-2 border-slate-900">
             Key Projects & Technical Achievements
@@ -427,7 +434,7 @@ export function Resume() {
                 href="https://daudio.dev/projects/DSaturator"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-slate-700 hover:text-slate-900 font-medium mt-2"
+                className="inline-flex items-center gap-1 text-sm text-slate-700 hover:text-slate-900 font-medium mt-2 print:text-slate-900 print:underline"
               >
                 Check out DSaturator →
               </a>
@@ -488,6 +495,14 @@ export function Resume() {
                   </span>
                 </li>
               </ul>
+              <a
+                href="https://daudio.dev/projects/DIRLoader"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-slate-700 hover:text-slate-900 font-medium mt-2 print:text-slate-900 print:underline"
+              >
+                Check out DIRLoader →
+              </a>
             </div>
 
             <div className="mb-4 min-w-0">
@@ -546,7 +561,7 @@ export function Resume() {
                 href="https://qvox.daudio.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-slate-700 hover:text-slate-900 font-medium mt-2"
+                className="inline-flex items-center gap-1 text-sm text-slate-700 hover:text-slate-900 font-medium mt-2 print:text-slate-900 print:underline"
               >
                 Check out QVox →
               </a>
@@ -554,11 +569,6 @@ export function Resume() {
           </div>
         </section>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-slate-100 px-12 py-6 text-center text-sm text-slate-600 border-t">
-        <p>References available upon request</p>
-      </footer>
     </div>
   );
 }

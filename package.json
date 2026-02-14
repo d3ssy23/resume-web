@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "export-pdf": "node scripts/export-pdf.js",
+    "export-server": "node scripts/export-pdf-server.js"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
@@ -64,6 +66,8 @@
     "vaul": "1.1.2"
   },
   "devDependencies": {
+    "express": "^4.21.0",
+    "puppeteer": "^23.0.0",
     "@tailwindcss/vite": "4.1.12",
     "@vitejs/plugin-react": "4.7.0",
     "tailwindcss": "4.1.12",
@@ -85,5 +89,8 @@
     "overrides": {
       "vite": "6.3.5"
     }
+  },
+  "puppeteer": {
+    "skipDownload": true
   }
 }

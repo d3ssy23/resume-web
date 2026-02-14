@@ -1,10 +1,68 @@
-@import './fonts.css';
-@import './tailwind.css';
-@import './theme.css';
+@import "./fonts.css";
+@import "./tailwind.css";
+@import "./theme.css";
 
-/* Print: fit resume on 1-1.5 pages */
+/* Print / PDF: A4 layout, preserve links and colors */
 @media print {
-  body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-  .print\\:shadow-none { box-shadow: none; }
-  .print\\:max-w-none { max-width: none; }
+  @page {
+    size: A4;
+    margin: 4mm;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    background: white;
+  }
+  /* A4-filling resume - readable font sizes, page padding */
+  .resume-container {
+    width: 210mm !important;
+    max-width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+    padding: 3mm 3mm !important;
+    box-sizing: border-box;
+  }
+  .resume-container header {
+    padding: 6px 12px !important;
+  }
+  .resume-container h1 {
+    font-size: 18px !important;
+  }
+  .resume-container h2 {
+    font-size: 14px !important;
+    margin-bottom: 5px !important;
+  }
+  .resume-container h3 {
+    font-size: 13px !important;
+  }
+  .resume-container p,
+  .resume-container li,
+  .resume-container span {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+  .resume-container section {
+    margin-bottom: 8px !important;
+  }
+  /* Bigger profile photo, no shadows in export */
+  .resume-container header img {
+    width: 100px !important;
+    height: 100px !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+  .resume-container a[href] {
+    text-decoration: underline;
+  }
+  /* Key Projects starts on page 2 */
+  .key-projects-section {
+    page-break-before: always;
+    padding-top: 10mm;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
 }
